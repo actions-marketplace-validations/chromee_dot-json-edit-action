@@ -19,8 +19,6 @@ This action update the origin file.
 
 ## Example usage
 
-### complex example
-
 ```
 - uses: chromee/dot-json-edit-action@v1
   with:
