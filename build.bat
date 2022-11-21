@@ -1,0 +1,1 @@
+dotnet publish csproj -c Release -o csproj/out

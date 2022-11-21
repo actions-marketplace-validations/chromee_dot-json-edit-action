@@ -1,0 +1,22 @@
+on: [push, workflow_dispatch]
+
+jobs:
+  dot_json_edit:
+    runs-on: ubuntu-latest
+    name: dot_json_edit test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cat json prev fixed
+        run: cat test/package-lock.json
+
+      - name: Edit json
+        uses: ./
+        with:
+          json_path: test/package-lock.json
+          field_path: "dependencies/com.unity.package/hash"
+          field_value: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+      - name: Cat json after fixed
+        run: cat test/package-lock.json

@@ -1,0 +1,20 @@
+# action.yml
+name: "dot json edit action"
+description: ""
+inputs:
+  json_path:
+    description: "json path"
+    required: true
+  field_path:
+    description: "field name"
+    required: true
+  field_value:
+    description: "field value"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.json_path }}
+    - ${{ inputs.field_path }}
+    - ${{ inputs.field_value }}
