@@ -1,19 +1,19 @@
 # action.yml
-name: "dot json edit action"
-description: ""
+name: dot json edit action
+description: This action can edit json file even if "." is used in the field path.
 inputs:
   json_path:
-    description: "json path"
+    description: json path
     required: true
   field_path:
-    description: "field name"
+    description: field name
     required: true
   field_value:
-    description: "field value"
+    description: field value
     required: true
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: docker
+  image: Dockerfile
   args:
     - ${{ inputs.json_path }}
     - ${{ inputs.field_path }}
